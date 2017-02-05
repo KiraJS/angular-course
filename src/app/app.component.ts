@@ -26,7 +26,7 @@ export class AppComponent implements IApp{
     this.index = increased;
   }
   public description = [{
-    title: "Corinthia Hotel Prague",
+    title: "Corinthia Hotel Pragues",
     subtitle: 'Czech Republic',
     descr1: "Sed perspiciatis",
     descr2: "Et harum quidem",
