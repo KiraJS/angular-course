@@ -5,7 +5,7 @@ interface ITeddy {
   imgSrc: string;
   folowersTitle: string;
   folowingTitle: string;
-  index: number;
+  int: number;
   description: {title: string, subtitle:string, descr1: string, descr2: string, phone: string, imgSrc1: string, imgSrc2: string, temp: number, waterTemp: number, folowers: number, folowing: number}[];
 }
 
@@ -16,7 +16,7 @@ interface ITeddy {
 })
 export class TeddyComponent implements ITeddy{
   @Input() description;
-  @Input() index;
+  @Input() int: number;
   public title: string = 'Nam libero voluptatem';
   public imgSrc: string = '/assets/images/b1.jpg';
   public folowersTitle: string = 'Folowers';

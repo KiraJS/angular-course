@@ -3,13 +3,13 @@
 <div class="element">
   <div class="element-left">
 
-    <app-left-view (onChanged)="onChanged($event)" [index]="index" [description]="description" ></app-left-view>
+    <app-left-view (onChanged)="onChanged($event)" [int]="int" [description]="description" ></app-left-view>
 
   </div>
 
   <div class="element-right">
-    <app-temperature [index]="index" [description]="description"> </app-temperature>
-    <app-teddy [index]="index"  [description]="description"></app-teddy>
+    <app-temperature [int]="int" [description]="description"> </app-temperature>
+    <app-teddy [int]="int"  [description]="description"></app-teddy>
   </div>
 
   <div class="clear"> </div>

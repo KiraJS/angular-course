@@ -1,30 +1,30 @@
-<div class="element-bg-img"><img src="{{description[index].imgSrc1}}" alt="" class="img-responsive"> </div>
+<div class="element-bg-img"><img src="{{description[int].imgSrc1}}" alt="" class="img-responsive"> </div>
 <div class="element-left-bottom">
 
   <div class="ele-strip">
-    <ul (click)="change($event.target.dataset.index)">
-      <li data-index="0"><a data-index="0">Hotel1 </a></li>
-      <li data-index="1"><a data-index="1">Hotel2</a></li>
-      <li data-index="2"><a data-index="2">Hotel3</a></li>
+    <ul>
+      <li><a href="#">Weather</a></li>
+      <li><a href="#">Folowers</a></li>
+      <li><a href="#">Folowing</a></li>
     </ul>
   </div>
 
   <div class="village">
-    <h3 id='title'>{{description[index].title}}</h3>
+    <h3>Righteous indignation & like</h3>
     <span class="line"> </span>
     <div class="activity_box">
       <div class="scrollbar" id="style-2">
-        <div class="activity-row">
-          <div class="activity-desc" id='description'>
-            <h5>{{description[index].subtitle}}</h5>
-            <p>{{description[index].descr1}}</p>
-            <p>{{description[index].descr2}}</p>
-            <h6>{{description[index].phone}}</h6>
+        <div class="activity-row" *ngFor="let item of description let j = index">
+          <div class="activity-desc">
+            <h5>{{item.subtitle}}</h5>
+            <p>{{item.descr1}}</p>
+            <p>{{item.descr2}}</p>
+            <h6>{{item.phone}}</h6>
           </div>
           <div class="activity-img">
             <ul>
-              <li><img src='{{description[index].imgSrc1}}'  alt=""/></li>
-              <li><img src='{{description[index].imgSrc2}}'  alt=""/></li>
+              <li><img src='{{item.imgSrc1}}' (click)="change(j)"  alt=""/></li>
+              <li><img src='{{item.imgSrc2}}' (click)="change(j)"   alt=""/></li>
             </ul>
           </div>
           <div class="clear"> </div>

@@ -5,7 +5,7 @@ interface IApp {
   linkSign: string;
   copyRight: string;
   linkUrl: string;
-  index: number;
+  int: number;
   onChanged(increased: number): void;
   description: {title: string, subtitle:string, descr1: string, descr2: string, phone: string, imgSrc1: string, imgSrc2: string, temp: number, waterTemp: number, folowers: number, folowing: number}[];
 }
@@ -21,9 +21,9 @@ export class AppComponent implements IApp{
   public linkSign: string = "W3layouts";
   public copyRight: string = '© 2015 Hot Weather Widget. All rights reserved | Design by  ';
   public linkUrl: string = 'http://w3layouts.com/';
-  public index: number = 1;
+  public int: number = 0;
   onChanged(increased: number): void{
-    this.index = increased;
+    this.int = increased;
   }
   public description = [{
     title: "Corinthia Hotel Pragues",

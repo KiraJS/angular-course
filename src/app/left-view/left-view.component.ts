@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 interface ILeftView {
-  index: number;
+  int: number;
   description: {title: string, subtitle:string, descr1: string, descr2: string, phone: string, imgSrc1: string, imgSrc2: string, temp: number, waterTemp: number, folowers: number, folowing: number}[];
   change(increased):void;
 }
@@ -14,7 +14,7 @@ interface ILeftView {
 
 export class LeftViewComponent implements ILeftView{
   @Input() description;
-  @Input() index;
+  @Input() int;
 
   @Output() onChanged = new EventEmitter<number>();
   change(increased) {
