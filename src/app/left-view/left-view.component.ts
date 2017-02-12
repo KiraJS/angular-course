@@ -1,10 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+type descriptionType = {title: string, subtitle: string, descr1: string, descr2: string,
+  phone: string, imgSrc1: string, imgSrc2: string, temp: number, waterTemp: number,
+  folowers: number, folowing: number}[];
+
 interface ILeftView {
   int: number;
-  description: {title: string, subtitle:string, descr1: string, descr2: string, phone: string, imgSrc1: string, imgSrc2: string, temp: number, waterTemp: number, folowers: number, folowing: number}[];
-  change(increased):void;
-  Changefilter(filterName):void;
+  description: descriptionType;
+  change(increased: number): void;
+  Changefilter(filterName: string): void;
 }
 
 @Component({
@@ -13,17 +17,17 @@ interface ILeftView {
   styleUrls: ['./left-view.component.css']
 })
 
-export class LeftViewComponent implements ILeftView{
-  @Input() description;
-  @Input() int;
-  @Input() filter;
+export class LeftViewComponent implements ILeftView {
+  @Input() public description: descriptionType;
+  @Input() public int: number;
+  @Input() public filter: string;
 
   @Output() onChanged = new EventEmitter<number>();
-  change(increased) {
+  public change(increased: number): void {
     this.onChanged.emit(increased);
   }
   @Output() onClick = new EventEmitter<string>();
-  Changefilter(name) {
+  public Changefilter(name: string): void {
     this.onClick.emit(name);
   }
 }
