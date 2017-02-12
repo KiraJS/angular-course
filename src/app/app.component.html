@@ -3,7 +3,7 @@
 <div class="element">
   <div class="element-left">
 
-    <app-left-view (onChanged)="onChanged($event)" [int]="int" [description]="description" ></app-left-view>
+    <app-left-view (onChanged)="onChanged($event)" (onClick)="onClick($event)" [filter]="filter" [int]="int" [description]="description" ></app-left-view>
 
   </div>
 

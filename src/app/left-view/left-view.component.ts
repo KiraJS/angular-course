@@ -4,6 +4,7 @@ interface ILeftView {
   int: number;
   description: {title: string, subtitle:string, descr1: string, descr2: string, phone: string, imgSrc1: string, imgSrc2: string, temp: number, waterTemp: number, folowers: number, folowing: number}[];
   change(increased):void;
+  Changefilter(filterName):void;
 }
 
 @Component({
@@ -15,9 +16,14 @@ interface ILeftView {
 export class LeftViewComponent implements ILeftView{
   @Input() description;
   @Input() int;
+  @Input() filter;
 
   @Output() onChanged = new EventEmitter<number>();
   change(increased) {
     this.onChanged.emit(increased);
+  }
+  @Output() onClick = new EventEmitter<string>();
+  Changefilter(name) {
+    this.onClick.emit(name);
   }
 }
